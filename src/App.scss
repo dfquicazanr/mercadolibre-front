@@ -1,0 +1,9 @@
+.App {
+  height: 100%;
+  background-color: #ebebeb;
+
+  &__container {
+    margin: 40px auto auto;
+    width: calc(65px + clamp(200px, 70%, 1000px) + 32px);
+  }
+}

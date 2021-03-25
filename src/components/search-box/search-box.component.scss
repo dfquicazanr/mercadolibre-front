@@ -1,0 +1,29 @@
+.search-box {
+  background-color: #fff159;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 65px clamp(200px, 70%, 1000px) 32px;
+  padding: 8px;
+
+
+  &__icon {
+
+  }
+
+  &__input {
+    border: 0;
+    padding-left: 10px;
+  }
+
+  &__button {
+    height: 32px;
+    width: 32px;
+
+    border: 0;
+    padding: 7px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
