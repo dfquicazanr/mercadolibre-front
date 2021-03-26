@@ -6,12 +6,12 @@ import {ProductResult} from "components/product-result/product-result.component"
 
 export const SearchResult = (props: any) => {
   const params = useQuery();
-  const queryString = params.get('q') as string;
-
   const [items, setItems] = useState([]);
+  let queryString = params.get('q') as string;
+
   useEffect(() => {
-    if (items?.length === 0) searchQueryString();
-  })
+    searchQueryString();
+  }, [queryString]);
 
   const searchQueryString = async () => {
     setItems((await searchQuery(queryString)).items);
