@@ -9,8 +9,8 @@ export interface Item {
   picture: string,
   condition: string,
   free_shipping: boolean,
-  sold_quantity: number,
-  description: string
+  sold_quantity?: number,
+  description?: string
 }
 
 export const emptyItem: Item = {

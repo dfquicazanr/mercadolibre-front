@@ -5,9 +5,9 @@ import {
   Route
 } from 'react-router-dom';
 import './App.scss';
-import { SearchBox } from './components/search-box/search-box.component';
-import { SearchResult } from './components/search-result/search-result.component';
-import { ProductDetail } from './components/product-detail/product-detail.component';
+import { SearchBox } from './containers/search-box/search-box.component';
+import { SearchResult } from './containers/search-result/search-result.component';
+import { ProductDetail } from './containers/product-detail/product-detail.component';
 
 function App() {
   return (
