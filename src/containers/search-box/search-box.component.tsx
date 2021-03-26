@@ -15,7 +15,7 @@ export const SearchBox = (props: any) => {
   }
 
   const searchRedirect = () => {
-    history.push(`items?q=${query}`);
+    history.push(`/items?q=${query}`);
   }
 
   return (

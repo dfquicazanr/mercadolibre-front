@@ -10,7 +10,7 @@ export const ProductResult = (props: { item: Item, key: number}) => {
 
   const redirectToProduct = () => {
     console.log(item.id)
-    history.push(`items/${item.id}`);
+    history.push(`/items/${item.id}`);
   }
 
   return(
