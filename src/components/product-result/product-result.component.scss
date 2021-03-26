@@ -5,6 +5,10 @@
   padding: 15px;
   background-color: white;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &__image {
     margin: auto;
     height: 200px;

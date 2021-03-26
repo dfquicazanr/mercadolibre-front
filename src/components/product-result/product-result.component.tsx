@@ -1,11 +1,20 @@
 import './product-result.component.scss';
 import {Item} from "models/item";
 import {formatPrice} from "utils/text-utils";
+import {useHistory} from "react-router-dom";
+import React from 'react';
 
 export const ProductResult = (props: { item: Item, key: number}) => {
   const { item, key } = props;
+  let history = useHistory();
+
+  const redirectToProduct = () => {
+    console.log(item.id)
+    history.push(`items/${item.id}`);
+  }
+
   return(
-    <div key={key}>
+    <div onClick={redirectToProduct} key={key}>
       <div className={'product-result'}>
         <img className={'product-result__image'} src={item.picture}/>
         <div className={'product-result__info'}>
