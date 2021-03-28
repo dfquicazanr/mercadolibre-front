@@ -11,8 +11,14 @@ export const SearchResult = (props: any) => {
   const [items, setItems] = useState([]);
 
   const searchQueryString = async () => {
-    searchQuery(queryString).then(result => setItems(result.items))
-      .catch(() => setResultText('No se encontraron productos'));
+    searchQuery(queryString).then(result => {
+        setItems(result.items);
+        setResultText('');
+      }
+    ).catch(() => {
+      setResultText('No se encontraron productos')
+      setItems([])
+    });
     setItems((await searchQuery(queryString)).items);
   }
 
@@ -20,13 +26,11 @@ export const SearchResult = (props: any) => {
     searchQueryString();
   }, [queryString]);
 
-  return (
-    <div className={'search-result'}>
-      {
-        items.length !== 0
-          ? items?.map((item, key) => ProductResult({item, key}))
-          : (<p>{resultText}</p>)
-      }
-    </div>
-  )
+  return resultText !== ''
+    ? (<p>{resultText}</p>)
+    : (
+      <div className={'search-result'}>
+        { items?.map((item, key) => ProductResult({item, key}))}
+      </div>
+    )
 };

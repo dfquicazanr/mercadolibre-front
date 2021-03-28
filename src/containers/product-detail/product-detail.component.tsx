@@ -15,8 +15,13 @@ export const ProductDetail = (props: any) => {
   })
 
   const getItemData = async () => {
-    getItem(params.id).then(result => setItem(result.item))
-      .catch(() => setResultText('Producto no encontrado'))
+    getItem(params.id).then(result => {
+      setItem(result.item);
+      setResultText('')
+    }).catch(() => {
+      setResultText('Producto no encontrado');
+      setItem(emptyItem);
+    })
   }
   return item.title ? (
     <div className={'product-detail'}>
