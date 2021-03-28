@@ -16,7 +16,7 @@ export const ProductResult = (props: { item: Item, key: number}) => {
   return(
     <div onClick={redirectToProduct} key={key}>
       <div className={'product-result'}>
-        <img className={'product-result__image'} src={item.picture}/>
+        <img className={'product-result__image'} src={item.picture} alt={item.title}/>
         <div className={'product-result__info'}>
           <h2 className={'product-result__info__price'}>{item.price.currency} {formatPrice(item.price.amount)}</h2>
           <h3 className={'product-result__info__title'}>{item.title}</h3>
