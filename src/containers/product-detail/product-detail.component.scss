@@ -1,10 +1,11 @@
+@import "src/variables";
 .product-detail {
   background-color: white;
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 3fr 1fr;
+  grid-template-rows: auto auto;
 
-  padding: 20px;
+  padding: 32px;
 
   &__image {
     margin: auto;
@@ -13,16 +14,23 @@
 
   &__info {
     &__subtitle {
-      color: gray;
-      font-size: small;
+      color: $medium-grey;
+      font-size: 14px;
+      line-height: 14px;
     }
 
     &__title {
-      font-size: x-large;
+      margin-top: 16px;
+
+      font-size: 24px;
+      line-height: 24px;
     }
 
     &__price {
-      font-size: xx-large;
+      margin: 32px 0;
+
+      font-size: 46px;
+      line-height: 46px;
       font-weight: lighter;
       &__decimals {
         vertical-align: revert;
@@ -47,12 +55,15 @@
 
   &__description {
     &__title {
-      font-size: x-large;
+      font-size: 28px;
+      line-height: 28px;
       margin-bottom: 0;
     }
 
     &__text {
-      font-size: small;
+      margin-top: 32px;
+
+      font-size: 16px;
     }
   }
 }

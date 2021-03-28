@@ -6,6 +6,7 @@ import {emptyItem} from "models/item";
 import {formatDecimals, formatPrice, translateCondition} from "utils/text-utils";
 
 export const ProductDetail = (props: any) => {
+  const [resultText, setResultText] = useState('')
   const params = useParams<{id: string}>();
 
   const [item, setItem] = useState(emptyItem);
@@ -14,9 +15,10 @@ export const ProductDetail = (props: any) => {
   })
 
   const getItemData = async () => {
-    setItem((await getItem(params.id)).item);
+    getItem(params.id).then(result => setItem(result.item))
+      .catch(() => setResultText('Producto no encontrado'))
   }
-  return (
+  return item.title ? (
     <div className={'product-detail'}>
       <img className={'product-detail__image'} src={item.picture} alt={item.title}/>
       <div className={'product-detail__info'}>
@@ -30,4 +32,7 @@ export const ProductDetail = (props: any) => {
         <p className={'product-detail__description__text'}>{item.description}</p>
       </div>
     </div>)
+ : (<p>{resultText}</p>)
+
+
 }
