@@ -1,5 +1,7 @@
+@import "src/variables";
+
 .search-box {
-  background-color: #fff159;
+  background-color: $main-color;
   display: grid;
   justify-content: center;
   grid-template-columns: 65px clamp(200px, 70%, 1000px) 32px;

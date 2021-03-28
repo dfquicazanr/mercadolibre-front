@@ -1,8 +1,10 @@
+@import "src/variables";
+
 .product-result {
   display: grid;
-  grid-template-columns: 200px auto 100px;
-  grid-gap: 10px;
-  padding: 15px;
+  grid-template-columns: 180px auto 150px;
+  grid-gap: 16px;
+  padding: 16px;
   background-color: white;
 
   &:hover {
@@ -11,24 +13,35 @@
 
   &__image {
     margin: auto;
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
     object-fit: contain;
     border-radius: 4px;
   }
 
   &__info {
     &__price {
+      font-size: 24px;
+      line-height: 24px;
       font-weight: normal;
+
+      &__free-shipping {
+        margin-left: 5px;
+      }
     }
 
     &__title {
+      margin-top: 32px;
+      font-size: 18px;
+      line-height: 18px;
       font-weight: normal;
     }
   }
 
   &__location {
-
+    font-size: 12px;
+    font-weight: normal;
+    color: $medium-grey;
   }
 
   &__separator {

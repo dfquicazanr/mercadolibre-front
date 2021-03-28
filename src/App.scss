@@ -1,5 +1,7 @@
+@import "variables";
+
 .App {
-  background-color: #ebebeb;
+  background-color: $light-grey;
 
   &__container {
     margin: 40px auto auto;
