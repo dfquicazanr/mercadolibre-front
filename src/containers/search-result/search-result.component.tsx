@@ -10,7 +10,7 @@ export const SearchResult = (props: any) => {
   let queryString = params.get('q') as string;
   const [items, setItems] = useState([]);
 
-  const searchQueryString = async () => {
+  const searchQueryString = () => {
     searchQuery(queryString).then(result => {
         setItems(result.items);
         setResultText('');
@@ -19,7 +19,6 @@ export const SearchResult = (props: any) => {
       setResultText('No se encontraron productos')
       setItems([])
     });
-    setItems((await searchQuery(queryString)).items);
   }
 
   useEffect(() => {
