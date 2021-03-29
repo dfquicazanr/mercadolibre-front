@@ -14,7 +14,7 @@ export const ProductDetail = (props: any) => {
     if (!item.title) getItemData();
   })
 
-  const getItemData = async () => {
+  const getItemData = () => {
     getItem(params.id).then(result => {
       setItem(result.item);
       setResultText('')
